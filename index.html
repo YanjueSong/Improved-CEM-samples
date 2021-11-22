@@ -59,6 +59,7 @@ Reference: <br/><code>@{Improved CEM for speech harmonic enhancement in single c
   <th align="center">Residual Amplitude Estimation</th>
   <th align="center">Cepstrum Convolution</th>
   <th align="center">Combined</th>
+  <th align="center">Clean Ref</th>
 </tr>
 </thead>
 <tbody>
@@ -75,13 +76,13 @@ var filenames = [
 ];
 
 var methods = [
-//{m: '_0clean'},
 {m: '_1noisy'},
 {m: '_2lsa'},
 {m: '_3cemid'},
 {m: '_4rae'},
 {m: '_5cc'},
-{m: '_6comb'}
+{m: '_6comb'},
+{m: '_0clean'}
 ];
 var info = [
 {f:'Traffic, SNR=0'},
@@ -91,6 +92,8 @@ var info = [
 {f:'Pink, SNR=10'},
 {f:'Crowd, SNR=10'},
 ];
+
+const elementWidth = '250';
 
 var tbody = document.querySelector('tbody');
 for (var i in filenames) {
@@ -102,16 +105,17 @@ for (var i in filenames) {
     tr.appendChild(td);
     for (var j in methods) {
       var td = document.createElement('td');
-      td.width = '300';
+      td.width = elementWidth;
       tr.appendChild(td);
       var img = document.createElement("img");
       img.src = './img/'+filenames[i]['f']+methods[j]['m']+'.png';
-      img.width= '300';
+      img.width= elementWidth;
       td.appendChild(img);
       var audio = document.createElement("audio");
       audio.src ='./audio/'+filenames[i]['f']+methods[j]['m']+'.wav';
       audio.controls = true;
       td.appendChild(audio);
+      audio.style.width = elementWidth;
       //console.log(filenames[i]['f']+methods[j]['m']+'.png')
 
     }
