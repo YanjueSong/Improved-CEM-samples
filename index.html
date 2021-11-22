@@ -102,6 +102,7 @@ for (var i in filenames) {
     tr.appendChild(td);
     for (var j in methods) {
       var td = document.createElement('td');
+      td.width = '300';
       tr.appendChild(td);
       var img = document.createElement("img");
       img.src = './img/'+filenames[i]['f']+methods[j]['m']+'.png';
