@@ -42,251 +42,80 @@
  </div>
 
 <div>
-<h3>Audio samples</h3>
+<h3>Audio samples </h3>
 <br/>
-Reference: <br/>@{}
+All samples have been rescaled to –26 dBov based on the active speech level (ASL). <br/>
+<br/>
+Reference: <br/><code>@{Improved CEM for speech harmonic enhancement in single channel noise suppression, }</code>
 <br/>
 
-<table border="1">
+<table class="tb" border="1"id="samples">
+<thead>
+<tr>
+  <th align="center">Methods</th>
+  <th align="center">Noisy input</th>
+  <th align="center">Baseline: LSA</th>
+  <th align="center">Baseline: CEM<sub>ID</sub></th>
+  <th align="center">Residual Amplitude Estimation</th>
+  <th align="center">Cepstrum Convolution</th>
+  <th align="center">Combined</th>
+</tr>
+</thead>
 <tbody>
-<tr>
-  <td class="case" align="center">Methods</td>
-  <td class="case" align="center">Pink,SNR=10dB</td>
-  <td class="case" align="center">Traffic, SNR=5dB</td>
-  <td class="case" align="center">Crowd, SNR=5dB</td>
-  <td class="case" align="center">Traffic, SNR=0dB</td>
-  <td class="case" align="center">Traffic, SNR=15dB</td>
-  <td class="case" align="center">Crowd, SNR=10dB</td>
-</tr>
-
-<tr>
-  <td align="center">CLEAN</td>
-  <td align="center" colspan="3">
-    <img src=".\img\F01_sx3+pink+SNR=10_0 CLEAN.png" width="300"><br/>
-  <audio controls=""><source src="./audio/pink 10dB/F01_sx3+pink+SNR=10_0 CLEAN.wav"></audio>
-  </td>
-
-<!--   <td align="center"><img src=".\img\F01_sx3+traffic+SNR=5_0 CLEAN.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 5dB/F01_sx3+traffic+SNR=5_0 CLEAN.wav"></audio></td>
-
-  <td align="center"><img src=".\img\F01_sx3+crowd+SNR=5_0 CLEAN.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 5dB/F01_sx3+crowd+SNR=5_0 CLEAN.wav"></audio></td> -->
-
-  <td align="center">
-    <img src=".\img\F07_sx273+traffic+SNR=0_0 CLEAN.png" width="300"><br/>
-  <audio controls=""><source src="./audio/traffic 0dB/F07_sx273+traffic+SNR=0_0 CLEAN.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F05_sx183+traffic+SNR=15_0 CLEAN.png" width="300"><br/>
-  <audio controls=""><source src="./audio/traffic 15dB/F05_sx183+traffic+SNR=15_0 CLEAN.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F09_sx363+crowd+SNR=10_0 CLEAN.png" width="300"><br/>
-  <audio controls=""><source src="./audio/crowd 10dB/F09_sx363+crowd+SNR=10_0 CLEAN.wav"></audio>
-  </td>
-</tr>
-
-<tr>
-  <td align="center">NOISY</td>
-  <td align="center">
-    <img src=".\img\F01_sx3+pink+SNR=10_0 NOISY.png" width="300"><br/>
-    <audio controls=""><source src="./audio/pink 10dB/F01_sx3+pink+SNR=10_0 NOISY.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+traffic+SNR=5_0 NOISY.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 5dB/F01_sx3+traffic+SNR=5_0 NOISY.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+crowd+SNR=5_0 NOISY.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 5dB/F01_sx3+crowd+SNR=5_0 NOISY.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F07_sx273+traffic+SNR=0_0 NOISY.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 0dB/F07_sx273+traffic+SNR=0_0 NOISY.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F05_sx183+traffic+SNR=15_0 NOISY.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 15dB/F05_sx183+traffic+SNR=15_0 NOISY.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F09_sx363+crowd+SNR=10_0 NOISY.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 10dB/F09_sx363+crowd+SNR=10_0 NOISY.wav"></audio>
-  </td>
-</tr>
-
-<tr>
-  <td align="center">LSA</td>
-  <td align="center">
-    <img src=".\img\F01_sx3+pink+SNR=10_0 LSA.png" width="300"><br/>
-    <audio controls=""><source src="./audio/pink 10dB/F01_sx3+pink+SNR=10_0 LSA.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+traffic+SNR=5_0 LSA.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 5dB/F01_sx3+traffic+SNR=5_0 LSA.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+crowd+SNR=5_0 LSA.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 5dB/F01_sx3+crowd+SNR=5_0 LSA.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F07_sx273+traffic+SNR=0_0 LSA.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 0dB/F07_sx273+traffic+SNR=0_0 LSA.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F05_sx183+traffic+SNR=15_0 LSA.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 15dB/F05_sx183+traffic+SNR=15_0 LSA.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F09_sx363+crowd+SNR=10_0 LSA.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 10dB/F09_sx363+crowd+SNR=10_0 LSA.wav"></audio>
-  </td>
-</tr>
-
-<tr>
-  <td align="center">CEM</td>
-  <td align="center">
-    <img src=".\img\F01_sx3+pink+SNR=10_1 CEM.png" width="300"><br/>
-    <audio controls=""><source src="./audio/pink 10dB/F01_sx3+pink+SNR=10_1 CEM.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+traffic+SNR=5_1 CEM.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 5dB/F01_sx3+traffic+SNR=5_1 CEM.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+crowd+SNR=5_1 CEM.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 5dB/F01_sx3+crowd+SNR=5_1 CEM.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F07_sx273+traffic+SNR=0_1 CEM.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 0dB/F07_sx273+traffic+SNR=0_1 CEM.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F05_sx183+traffic+SNR=15_1 CEM.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 15dB/F05_sx183+traffic+SNR=15_1 CEM.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F09_sx363+crowd+SNR=10_1 CEM.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 10dB/F09_sx363+crowd+SNR=10_1 CEM.wav"></audio>
-  </td>
-</tr>
-
-<tr>
-  <td align="center">RAE</td>
-  <td align="center">
-    <img src=".\img\F01_sx3+pink+SNR=10_2 RAE.png" width="300"><br/>
-    <audio controls=""><source src="./audio/pink 10dB/F01_sx3+pink+SNR=10_2 RAE.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+traffic+SNR=5_2 RAE.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 5dB/F01_sx3+traffic+SNR=5_2 RAE.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+crowd+SNR=5_2 RAE.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 5dB/F01_sx3+crowd+SNR=5_2 RAE.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F07_sx273+traffic+SNR=0_2 RAE.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 0dB/F07_sx273+traffic+SNR=0_2 RAE.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F05_sx183+traffic+SNR=15_2 RAE.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 15dB/F05_sx183+traffic+SNR=15_2 RAE.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F09_sx363+crowd+SNR=10_2 RAE.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 10dB/F09_sx363+crowd+SNR=10_2 RAE.wav"></audio>
-  </td>
-</tr>
-
-<tr>
-  <td align="center">CC</td>
-  <td align="center">
-    <img src=".\img\F01_sx3+pink+SNR=10_3 CC.png" width="300"><br/>
-    <audio controls=""><source src="./audio/pink 10dB/F01_sx3+pink+SNR=10_3 CC.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+traffic+SNR=5_3 CC.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 5dB/F01_sx3+traffic+SNR=5_3 CC.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+crowd+SNR=5_3 CC.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 5dB/F01_sx3+crowd+SNR=5_3 CC.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F07_sx273+traffic+SNR=0_3 CC.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 0dB/F07_sx273+traffic+SNR=0_3 CC.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F05_sx183+traffic+SNR=15_3 CC.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 15dB/F05_sx183+traffic+SNR=15_3 CC.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F09_sx363+crowd+SNR=10_3 CC.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 10dB/F09_sx363+crowd+SNR=10_3 CC.wav"></audio>
-  </td>
-</tr>
-
-<tr>
-  <td align="center">RAE+CC</td>
-  <td align="center">
-    <img src=".\img\F01_sx3+pink+SNR=10_4 Comb.png" width="300"><br/>
-    <audio controls=""><source src="./audio/pink 10dB/F01_sx3+pink+SNR=10_4 Comb.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+traffic+SNR=5_4 Comb.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 5dB/F01_sx3+traffic+SNR=5_4 Comb.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F01_sx3+crowd+SNR=5_4 Comb.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 5dB/F01_sx3+crowd+SNR=5_4 Comb.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F07_sx273+traffic+SNR=0_4 Comb.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 0dB/F07_sx273+traffic+SNR=0_4 Comb.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F05_sx183+traffic+SNR=15_4 Comb.png" width="300"><br/>
-    <audio controls=""><source src="./audio/traffic 15dB/F05_sx183+traffic+SNR=15_4 Comb.wav"></audio>
-  </td>
-
-  <td align="center">
-    <img src=".\img\F09_sx363+crowd+SNR=10_4 Comb.png" width="300"><br/>
-    <audio controls=""><source src="./audio/crowd 10dB/F09_sx363+crowd+SNR=10_4 Comb.wav"></audio>
-  </td>
-</tr>
-
+</tbody>
 </div>
+<script>
+var filenames = [
+{f:'F07_sx273+traffic+SNR=0'},
+{f:'118394_mrjr0_sx282_16khz+Outside_Traffic_Road_16khz_hp+SNR=5'},
+{f:'125684_fdrw0_sx383_16khz+CAFE1+SNR=5'},
+{f:'47929_mchh0_sx284_16khz+CAFE2+SNR=0'},
+{f:'F01_sx3+pink+SNR=10'},
+{f:'F09_sx363+crowd+SNR=10'},
+];
 
+var methods = [
+//{m: '_0clean'},
+{m: '_1noisy'},
+{m: '_2lsa'},
+{m: '_3cemid'},
+{m: '_4rae'},
+{m: '_5cc'},
+{m: '_6comb'}
+];
+var info = [
+{f:'Traffic, SNR=0'},
+{f:'Traffic, SNR=5'},
+{f:'Cafe, SNR=0'},
+{f:'Cafe, SNR=5'},
+{f:'Pink, SNR=10'},
+{f:'Crowd, SNR=10'},
+];
+
+var tbody = document.querySelector('tbody');
+for (var i in filenames) {
+    var tr = document.createElement('tr');   
+    tbody.appendChild(tr);
+    var td = document.createElement('td');
+    td.align="center";
+    td.innerHTML = info[i]['f'];
+    tr.appendChild(td);
+    for (var j in methods) {
+      var td = document.createElement('td');
+      tr.appendChild(td);
+      var img = document.createElement("img");
+      img.src = './img/'+filenames[i]['f']+methods[j]['m']+'.png';
+      img.width= '300';
+      td.appendChild(img);
+      var audio = document.createElement("audio");
+      audio.src ='./audio/'+filenames[i]['f']+methods[j]['m']+'.wav';
+      audio.controls = true;
+      td.appendChild(audio);
+      //console.log(filenames[i]['f']+methods[j]['m']+'.png')
+
+    }
+    
+}
+</script>
 
 </body>
