@@ -27,10 +27,38 @@
     font-weight: bold;
     text-transform: capitalize;
   }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  #topBtn:hover {
+    background-color: #3265C2;
+  }
+
 </style>
 </head>
 
 <body>
+
+<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
 
 <div>
    <div class="row">
@@ -64,63 +92,96 @@ Reference: <br/><code>@{Improved CEM for speech harmonic enhancement in single c
 </thead>
 <tbody>
 </tbody>
+
+<br/>
+<br/>
+
 </div>
+
+
 <script>
+
+// Top buttln
+//Get the button
+var mybutton = document.getElementById("topBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
 var filenames = [
-{f:'F07_sx273+traffic+SNR=0'},
-{f:'118394_mrjr0_sx282_16khz+Outside_Traffic_Road_16khz_hp+SNR=5'},
-{f:'125684_fdrw0_sx383_16khz+CAFE1+SNR=5'},
-{f:'47929_mchh0_sx284_16khz+CAFE2+SNR=0'},
-{f:'F01_sx3+pink+SNR=10'},
-{f:'F09_sx363+crowd+SNR=10'},
+'F07_sx273+traffic+SNR=0',
+'118394_mrjr0_sx282_16khz+Outside_Traffic_Road_16khz_hp+SNR=5',
+'mic_F09_sx363_cut_cafe_-5dB',
+'47929_mchh0_sx284_16khz+CAFE2+SNR=0',
+'125684_fdrw0_sx383_16khz+CAFE1+SNR=5',
+'F01_sx3+pink+SNR=10',
+'F09_sx363+crowd+SNR=10',
+'2604_mic_F06_sx259_16khz_hp+volvo_clilp_16khz_hp+SNR=-5',
 ];
 
 var methods = [
-{m: '_1noisy'},
-{m: '_2lsa'},
-{m: '_3cemid'},
-{m: '_4rae'},
-{m: '_5cc'},
-{m: '_6comb'},
-{m: '_0clean'}
+'_1noisy',
+'_2lsa',
+'_3cemid',
+'_4rae',
+'_5cc',
+'_6comb',
+'_0clean'
 ];
 var info = [
-{f:'Traffic, SNR=0'},
-{f:'Traffic, SNR=5'},
-{f:'Cafe, SNR=0'},
-{f:'Cafe, SNR=5'},
-{f:'Pink, SNR=10'},
-{f:'Crowd, SNR=10'},
+'Traffic, SNR=0',
+'Traffic, SNR=5',
+'Cafe, SNR=-5',
+'Cafe, SNR=0',
+'Cafe, SNR=5',
+'Pink, SNR=10',
+'Crowd, SNR=10',
+'Car, SNR=-5',
 ];
 
 const elementWidth = '250';
 
-var tbody = document.querySelector('tbody');
+var tbody = document.getElementById("samples");
 for (var i in filenames) {
     var tr = document.createElement('tr');   
     tbody.appendChild(tr);
     var td = document.createElement('td');
     td.align="center";
-    td.innerHTML = info[i]['f'];
+    td.innerHTML = info[i];
     tr.appendChild(td);
     for (var j in methods) {
       var td = document.createElement('td');
       td.width = elementWidth;
       tr.appendChild(td);
       var img = document.createElement("img");
-      img.src = './img/'+filenames[i]['f']+methods[j]['m']+'.png';
+      img.src = './img/'+filenames[i]+methods[j]+'.png';
       img.width= elementWidth;
       td.appendChild(img);
       var audio = document.createElement("audio");
-      audio.src ='./audio/'+filenames[i]['f']+methods[j]['m']+'.wav';
+      audio.src ='./audio/'+filenames[i]+methods[j]+'.wav';
       audio.controls = true;
       td.appendChild(audio);
       audio.style.width = elementWidth;
-      //console.log(filenames[i]['f']+methods[j]['m']+'.png')
 
     }
     
 }
+
 </script>
 
 </body>
